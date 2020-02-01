@@ -1,41 +1,41 @@
 ;=============================
-;PC-8001 "ASTEROID BELT"ç”¨
-;ã‚¤ãƒ³ãƒ™ãƒ¼ãƒ€ãƒ¼éŸ³æºãƒ‘ãƒƒãƒ
-;2020/02/01
+;PC-8001 "ASTEROID BELT"—p
+;ƒCƒ“ƒx[ƒ_[‰¹Œ¹ƒpƒbƒ`
+;2020/02/02
 ;=============================
 
-;ä½¿ã„æ–¹
-;(1)ã‚²ãƒ¼ãƒ ã®BASICãƒ•ã‚¡ã‚¤ãƒ«ã¨æ©Ÿæ¢°èªžãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ­ãƒ¼ãƒ‰ã™ã‚‹
-;(2)BASICã®150è¡Œã‚’ CLEAR 300,&HCFFF ã«ä¿®æ­£ã™ã‚‹
-;(3)ã“ã®ãƒ‘ãƒƒãƒãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’ãƒ­ãƒ¼ãƒ‰ã™ã‚‹
-;(4)ãƒ¢ãƒ‹ã‚¿ã‹ã‚‰ GD000 ã‚’å®Ÿè¡Œã™ã‚‹
-;(5)ãƒ™ãƒ¼ã‚·ãƒƒã‚¯ã‹ã‚‰ RUN ã‚’å®Ÿè¡Œã™ã‚‹
+;Žg‚¢•û
+;(1)ƒQ[ƒ€‚ÌBASICƒtƒ@ƒCƒ‹‚Æ‹@ŠBŒêƒtƒ@ƒCƒ‹‚ðƒ[ƒh‚·‚é
+;(2)BASIC‚Ì150s‚ð CLEAR 300,&HCFFF ‚ÉC³‚·‚é
+;(3)‚±‚Ìƒpƒbƒ`ƒvƒƒOƒ‰ƒ€‚ðƒ[ƒh‚·‚é
+;(4)ƒ‚ƒjƒ^‚©‚ç GD000 ‚ðŽÀs‚·‚é
+;(5)ƒx[ƒVƒbƒN‚©‚ç RUN ‚ðŽÀs‚·‚é
 ;
-;ãƒ»ãƒ‘ãƒƒãƒã‚’å½“ã¦ãŸæ©Ÿæ¢°èªžãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’ä¿å­˜ã™ã‚‹ã«ã¯ã€ãƒ¢ãƒ‹ã‚¿ã‹ã‚‰ WD000,E6FF ã‚’å®Ÿè¡Œã—ã¦ä¸‹ã•ã„
-;ãƒ»éŸ³ãŒæ­¢ã¾ã‚‰ãªã„æ™‚ã¯ã€OUT 16,255 ã‚’å®Ÿè¡Œã—ã¦ä¸‹ã•ã„
+;Eƒpƒbƒ`‚ð“–‚Ä‚½‹@ŠBŒêƒvƒƒOƒ‰ƒ€‚ð•Û‘¶‚·‚é‚É‚ÍAƒ‚ƒjƒ^‚©‚ç WD000,E6FF ‚ðŽÀs‚µ‚Ä‰º‚³‚¢
+;E‰¹‚ªŽ~‚Ü‚ç‚È‚¢Žž‚ÍAOUT 16,255 ‚ðŽÀs‚µ‚Ä‰º‚³‚¢
 
 ;-----------------------------
 
 FALSE	EQU	0
 
-BOMBB	EQU	00000001B	;çˆ†ç™ºéŸ³
-MSSLB	EQU	00000010B	;ãƒŸã‚µã‚¤ãƒ«ç™ºå°„éŸ³
-UFOHITB	EQU	00000100B	;UFOãƒ’ãƒƒãƒˆéŸ³
-THITB	EQU	00001000B	;ã‚¿ãƒ¼ã‚²ãƒƒãƒˆãƒ’ãƒƒãƒˆéŸ³
-STEPB	EQU	00010000B	;è¡Œé€²éŸ³
-UFOB	EQU	00100000B	;UFOé£›è¡ŒéŸ³
-PORT	EQU	10H		;ã‚µã‚¦ãƒ³ãƒ‰ãƒœãƒ¼ãƒ‰ã®ãƒãƒ¼ãƒˆç•ªå·
+BOMBB	EQU	00000001B	;”š”­‰¹
+MSSLB	EQU	00000010B	;ƒ~ƒTƒCƒ‹”­ŽË‰¹
+UFOHITB	EQU	00000100B	;UFOƒqƒbƒg‰¹
+THITB	EQU	00001000B	;ƒ^[ƒQƒbƒgƒqƒbƒg‰¹
+STEPB	EQU	00010000B	;si‰¹
+UFOB	EQU	00100000B	;UFO”òs‰¹
+PORT	EQU	10H		;ƒTƒEƒ“ƒhƒ{[ƒh‚Ìƒ|[ƒg”Ô†
 CLK1	EQU	0D7B3H
 MACLK	EQU	0E64AH
 TIMR2	EQU	0D78EH
 Z0202	EQU	0D6D3H
 INIT1	EQU	0E3DAH
-
+UFOCT	EQU	0E6AEH		;UFO‚Ì‘”
 
 	ORG	0D000H
 
 ;-----------------------------
-;ãƒ‘ãƒƒãƒã‚’å½“ã¦ã‚‹
+;ƒpƒbƒ`‚ð“–‚Ä‚é
 ;-----------------------------
 PATCH:
 	LD	HL,PATCH_DATA
@@ -53,7 +53,7 @@ PATCH:
 	JR	.L1
 
 ;-----------------------------
-;ã‚µã‚¦ãƒ³ãƒ‰ãƒœãƒ¼ãƒ‰ã‚’åˆæœŸåŒ–ã™ã‚‹
+;ƒTƒEƒ“ƒhƒ{[ƒh‚ð‰Šú‰»‚·‚é
 ;-----------------------------
 SNDINIT:
 	LD	A,0FFH
@@ -62,7 +62,7 @@ SNDINIT:
 	JP	INIT1
 
 ;-----------------------------
-;ãƒ“ãƒ¼ãƒ ã‚«ãƒ¼å‡ºç¾æ™‚ã®ã‚¦ã‚§ã‚¤ãƒˆ
+;ƒr[ƒ€ƒJ[oŒ»Žž‚ÌƒEƒFƒCƒg
 ;-----------------------------
 CARWAIT:
 	PUSH	BC
@@ -75,97 +75,97 @@ CARWAIT:
 	RET
 
 ;-----------------------------
-;UFOé£›è¡ŒéŸ³ã‚’ç™ºç”Ÿ
+;UFO”òs‰¹‚ð”­¶
 ;-----------------------------
 UFOSND:
 	LD	C,UFOB
 	JR	PLAYSND
 
 ;-----------------------------
-;UFOé£›è¡ŒéŸ³ã‚’åœæ­¢
+;UFO”òs‰¹‚ð’âŽ~
 ;-----------------------------
 UFOSND_STOP:
 	LD	C,UFOB
 	JR	STOPSND
 
 ;-----------------------------
-;UFOãƒ’ãƒƒãƒˆéŸ³ã‚’ç™ºç”Ÿ
+;UFOƒqƒbƒg‰¹‚ð”­¶
 ;-----------------------------
 UHITSND:
 	LD	C,UFOHITB
 	JR	PLAYSND
 
 ;-----------------------------
-;UFOãƒ’ãƒƒãƒˆéŸ³ã‚’åœæ­¢
+;UFOƒqƒbƒg‰¹‚ð’âŽ~
 ;-----------------------------
 UHITSND_STOP:
 	LD	C,UFOHITB
 	JR	STOPSND
 
 ;-----------------------------
-;ãƒŸã‚µã‚¤ãƒ«ç™ºå°„éŸ³ã‚’ç™ºç”Ÿ
+;ƒ~ƒTƒCƒ‹”­ŽË‰¹‚ð”­¶
 ;-----------------------------
 SHOTSND:
 	LD	C,MSSLB
 	JR	PLAYSND
 
 ;-----------------------------
-;ãƒ’ãƒƒãƒˆéŸ³ã‚’ç™ºç”Ÿ
+;ƒqƒbƒg‰¹‚ð”­¶
 ;-----------------------------
 HITSND:
 	LD	C,THITB
 	JR	PLAYSND
 
 ;-----------------------------
-;çˆ†ç™ºéŸ³ã‚’ç™ºç”Ÿ
+;”š”­‰¹‚ð”­¶
 ;-----------------------------
 BOMBSND:
 	LD	C,BOMBB
 	JR	PLAYSND
 
 ;-----------------------------
-;çˆ†ç™ºéŸ³ã‚’åœæ­¢
+;”š”­‰¹‚ð’âŽ~
 ;-----------------------------
 BOMBSND_STOP:
 	LD	C,BOMBB
 	JR	STOPSND
 
 ;-----------------------------
-;ã‚¹ãƒ†ãƒƒãƒ—éŸ³ã‚’ç™ºç”Ÿ
+;ƒXƒeƒbƒv‰¹‚ð”­¶
 ;-----------------------------
 STEPSND:
 	LD	C,STEPB
 	JR	PLAYSND
 
 ;-----------------------------
-;ã‚¹ãƒ†ãƒƒãƒ—éŸ³ã‚’åœæ­¢
+;ƒXƒeƒbƒv‰¹‚ð’âŽ~
 ;-----------------------------
 STEPSND_STOP:
 	LD	C,STEPB
 	JR	STOPSND
 
 ;-----------------------------
-;ãƒŸã‚¹éŸ³ã‚’ç™ºç”Ÿ
+;ƒ~ƒX‰¹‚ð”­¶
 ;-----------------------------
 MISSSND:
 	CALL	STEPSND_STOP
 	JP	BOMBSND
 
 ;-----------------------------
-;ãƒŸã‚¹éŸ³ã‚’åœæ­¢
+;ƒ~ƒX‰¹‚ð’âŽ~
 ;-----------------------------
 MISSSND_STOP:
 	JP	BOMBSND_STOP
 
 ;-----------------------------
-;ã‚¹ãƒ†ãƒ¼ã‚¸ã‚¯ãƒªã‚¢éŸ³ã‚’ç™ºç”Ÿ
+;ƒXƒe[ƒWƒNƒŠƒA‰¹‚ð”­¶
 ;-----------------------------
 CLEARSND:
 	CALL	STEPSND_STOP
 	JP	UHITSND
 
 ;-----------------------------
-;æ¬¡ã®ã‚¹ãƒ†ãƒ¼ã‚¸ã¸
+;ŽŸ‚ÌƒXƒe[ƒW‚Ö
 ;-----------------------------
 NEXTSTAGE:
 	CALL	UHITSND_STOP
@@ -174,8 +174,8 @@ NEXTSTAGE:
 	JP	Z0202
 
 ;-----------------------------
-;éŸ³ã‚’ç™ºç”Ÿ
-;IN	C=ãƒ“ãƒƒãƒˆãƒ‘ã‚¿ãƒ¼ãƒ³
+;‰¹‚ð”­¶
+;IN	C=ƒrƒbƒgƒpƒ^[ƒ“
 ;-----------------------------
 PLAYSND:
 	LD	A,(SND)
@@ -187,8 +187,8 @@ PLAYSND:
 	RET
 
 ;-----------------------------
-;éŸ³ã‚’åœæ­¢
-;IN	C=ãƒ“ãƒƒãƒˆãƒ‘ã‚¿ãƒ¼ãƒ³
+;‰¹‚ð’âŽ~
+;IN	C=ƒrƒbƒgƒpƒ^[ƒ“
 ;-----------------------------
 STOPSND:
 	LD	A,(SND)
@@ -198,13 +198,26 @@ STOPSND:
 	RET
 
 ;-----------------------------
-;ã‚¹ãƒ†ãƒƒãƒ—éŸ³ã‚’ç™ºç”Ÿ
+;ƒXƒeƒbƒv‰¹‚ð”­¶
 ;-----------------------------
 BGM:
 	CALL	CLK1
 
-	LD	A,(MACLK)
-	AND	00001111B
+	LD	C,00111111B	;=‰¹”­¶ŽüŠú
+	LD	A,(UFOCT)
+
+	CP	30
+	JR	NC,.L2
+	SRL	C
+	CP	20
+	JR	NC,.L2
+	SRL	C
+	CP	10
+	JR	NC,.L2
+	SRL	C
+
+.L2:	LD	A,(MACLK)
+	AND	C
 	JR	NZ,.L1
 
 	LD	A,(SND)
@@ -231,12 +244,12 @@ PATCH_DATA:
 	DB	03H
 	CALL	BGM
 
-;ã‚µã‚¦ãƒ³ãƒ‰åˆæœŸåŒ–
+;ƒTƒEƒ“ƒh‰Šú‰»
 	DW	0D6D0H
 	DB	03H
 	CALL	SNDINIT
 
-;å‡ºç¾éŸ³
+;oŒ»‰¹
 	DW	0D903H
 	DB	06H
 	CALL	UFOSND
@@ -246,7 +259,7 @@ PATCH_DATA:
 	DB	03H
 	CALL	UFOSND_STOP
 
-;çˆ†ç™ºéŸ³
+;”š”­‰¹
 	DW	0DF84H
 	DB	03H
 	CALL	MISSSND
@@ -279,13 +292,13 @@ PATCH_DATA:
 	DB	03H
 	CALL	MISSSND_STOP
 
-;ãƒ“ãƒ¼ãƒ ç™ºå°„éŸ³
+;ƒr[ƒ€”­ŽË‰¹
 	DW	0DACCH
 	DB	04H
 	CALL	SHOTSND
 	RET
 
-;ALIEN ãƒ’ãƒƒãƒˆéŸ³
+;ALIEN ƒqƒbƒg‰¹
 	DW	0DC02H
 	DB	06H
 	NOP
@@ -293,7 +306,7 @@ PATCH_DATA:
 	NOP
 	CALL	HITSND
 
-;INVADER ãƒ’ãƒƒãƒˆéŸ³
+;INVADER ƒqƒbƒg‰¹
 	DW	0DC11H
 	DB	06H
 	NOP
@@ -301,7 +314,7 @@ PATCH_DATA:
 	NOP
 	CALL	HITSND
 
-;UFO ãƒ’ãƒƒãƒˆéŸ³
+;UFO ƒqƒbƒg‰¹
 	DW	0DBD8H
 	DB	06H
 	NOP
@@ -309,7 +322,7 @@ PATCH_DATA:
 	NOP
 	CALL	HITSND
 
-;é¢ã‚¯ãƒªã‚¢éŸ³
+;–ÊƒNƒŠƒA‰¹
 	DW	0DF05H
 	DB	01H
 	DB	0AH
@@ -328,17 +341,11 @@ PATCH_DATA:
 	DB	03H
 	JP	NEXTSTAGE
 
-;ãƒŸã‚µã‚¤ãƒ«ç™ºç”ŸçŽ‡
-;	DW	0DDC0H
-;	DB	01H
-;	DB	03H
-
-
 ;END OF DATA
 	DB	00H,00H,00H
 
 
-SND:	DB	00H		;ãƒãƒ¼ãƒˆ10Hã«å‡ºåŠ›ã—ãŸå€¤
+SND:	DB	00H		;ƒ|[ƒg10H‚Éo—Í‚µ‚½’l
 
 
 
